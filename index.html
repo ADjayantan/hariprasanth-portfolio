@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Hariprasanth T — Full-Stack Developer &amp; CS Undergraduate</title>
+  <meta name="title" content="Hariprasanth T — Full-Stack Developer &amp; CS Undergraduate" />
+  <meta name="description" content="Third-year Computer Science undergraduate building scalable full-stack web applications, real-time distributed platforms, offline-first desktop apps, and AWS cloud systems." />
+  <meta name="keywords" content="Hariprasanth T, Full Stack Developer, Software Engineer, React, TypeScript, Node.js, Python, Supabase, AWS, APIForesight, Digi Bus, RemindGo, SysScan, VSB College of Engineering" />
+  <meta name="author" content="Hariprasanth T" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ihariprasanth.github.io/" />
+  <meta property="og:title" content="Hariprasanth T — Full-Stack Developer &amp; CS Undergraduate" />
+  <meta property="og:description" content="Building scalable full-stack web applications, real-time systems, offline-first desktop apps, and AWS cloud infrastructure." />
+  <meta property="og:image" content="assets/images/profile.jpg" />
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Pure CSS Light / Dark Theme Checkbox -->
+  <input type="checkbox" id="theme-toggle" class="sr-only" aria-label="Toggle dark mode" />
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- STICKY MINIMAL HEADER -->
+  <header class="header" id="top">
+    <div class="container">
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#home" class="nav__brand">
+          <span class="nav__mark" aria-hidden="true">HP</span>
+          <span>Hariprasanth T</span>
+        </a>
+
+        <ul class="nav__list">
+          <li><a href="#work" class="nav__link">Work</a></li>
+          <li><a href="#experience" class="nav__link">Experience</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#credentials" class="nav__link">Credentials</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+
+        <div class="nav__controls">
+          <label for="theme-toggle" class="icon-btn theme-label" title="Toggle Light / Dark mode" aria-label="Toggle Light or Dark mode">
+            <!-- Moon icon (Light mode) -->
+            <svg class="theme-toggle__moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <!-- Sun icon (Dark mode) -->
+            <svg class="theme-toggle__sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+          </label>
+
+          <a
+            href="assets/docs/HARIPRASANTH_RESUME.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav__resume"
+          >
+            <span>Resume</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 10L10 2M10 2H4M10 2v6" />
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 00. EDITORIAL HERO -->
+    <section id="home" class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__content">
+            <div class="status-pill">
+              <span class="status-pill__dot" aria-hidden="true"></span>
+              <span>Open to SWE &amp; Cloud Internships · Coimbatore / Remote</span>
+            </div>
+
+            <h1 id="hero-heading" class="hero__title">Hariprasanth T</h1>
+
+            <p class="hero__lead">
+              Full-stack developer &amp; Computer Science undergraduate building reliable web platforms, real-time systems, and cloud infrastructure.
+            </p>
+
+            <p class="hero__bio">
+              Third-year B.E. CSE student at VSB College of Engineering, Coimbatore (CGPA 8.52).
+              I design and ship software end-to-end — from responsive React &amp; TypeScript interfaces and Node.js APIs to offline SQLite desktop tools and AWS cloud architectures.
+            </p>
+
+            <div class="hero__actions">
+              <a href="#work" class="btn btn--primary">
+                View Selected Work
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+              </a>
+              <a
+                href="assets/docs/HARIPRASANTH_RESUME.pdf"
+                download="Hariprasanth_T_Resume.pdf"
+                class="btn btn--secondary"
+              >
+                Download Resume
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M8 2.5v8M4.75 7.75L8 11l3.25-3.25M3 13.5h10" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="hero__socials" aria-label="Developer profiles">
+              <a href="https://github.com/ihariprasanth" target="_blank" rel="noopener noreferrer" class="text-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/ihariprasanth" target="_blank" rel="noopener noreferrer" class="text-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 110-4.125 2.062 2.062 0 010 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://leetcode.com/ihariprasanth" target="_blank" rel="noopener noreferrer" class="text-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
+                </svg>
+                <span>LeetCode</span>
+              </a>
+              <a href="mailto:hariprasanth.user@gmail.com" class="text-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="M22 6l-10 7L2 6" />
+                </svg>
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <figure class="portrait">
+              <div class="portrait__frame">
+                <img
+                  src="assets/images/profile-transparent.png"
+                  alt="Portrait of Hariprasanth T"
+                  class="portrait__img"
+                  width="310"
+                  height="329"
+                  fetchpriority="high"
+                />
+              </div>
+              <figcaption class="portrait__caption">
+                <span>Tiruppur, Tamil Nadu</span>
+                <span class="tabular">B.E. CSE ’28</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- QUICK HIGHLIGHTS STRIP -->
+        <div class="metrics" aria-label="Career highlights">
+          <div class="metric">
+            <span class="metric__value tabular">8.52<span class="metric__denom"> / 10</span></span>
+            <span class="metric__label">B.E. CSE CGPA</span>
+          </div>
+          <div class="metric">
+            <span class="metric__value tabular">2</span>
+            <span class="metric__label">Internships (AWS &amp; MERN)</span>
+          </div>
+          <div class="metric">
+            <span class="metric__value tabular">4</span>
+            <span class="metric__label">Shipped Engineering Projects</span>
+          </div>
+          <div class="metric">
+            <span class="metric__value tabular">5</span>
+            <span class="metric__label">Verified Certifications</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01. SELECTED WORK (PURE CSS CATEGORY FILTER) -->
+    <section id="work" class="section section--first" aria-labelledby="work-heading">
+      <div class="container">
+        <!-- Hidden radio inputs power pure CSS filtering -->
+        <input type="radio" name="project-filter" id="filter-all" class="sr-only" checked />
+        <input type="radio" name="project-filter" id="filter-fullstack" class="sr-only" />
+        <input type="radio" name="project-filter" id="filter-ml" class="sr-only" />
+        <input type="radio" name="project-filter" id="filter-systems" class="sr-only" />
+
+        <div class="section__head">
+          <div>
+            <span class="section__kicker">01 / Selected Work</span>
+            <h2 id="work-heading" class="section__title">Projects</h2>
+          </div>
+
+          <div class="filter-bar" role="group" aria-label="Filter projects by category">
+            <label for="filter-all" class="filter-btn">All (4)</label>
+            <label for="filter-fullstack" class="filter-btn">Full-Stack</label>
+            <label for="filter-ml" class="filter-btn">ML &amp; Reliability</label>
+            <label for="filter-systems" class="filter-btn">Desktop &amp; Systems</label>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 01: APIForesight -->
+          <article class="project-card" data-categories="ml fullstack">
+            <div class="project-card__top">
+              <div class="project-card__meta">
+                <span class="project-card__index tabular">01</span>
+                <span>·</span>
+                <span>ML &amp; Microservices</span>
+              </div>
+              <span class="badge-subtle">Flagship</span>
+            </div>
+
+            <h3 class="project-card__title">
+              APIForesight
+              <span class="project-card__subtitle">Predictive API Reliability &amp; Failure Intelligence Platform</span>
+            </h3>
+
+            <p class="project-card__desc">
+              Machine learning platform that forecasts downstream microservice and API failures ~10 minutes ahead — acting as a Pre-MPIN Risk Shield to prevent failed or pending payment and booking transactions.
+            </p>
+
+            <ul class="project-card__points">
+              <li>Predicts high-risk payment and ticketing degradation windows before user checkout confirmation.</li>
+              <li>Interactive sandbox studio simulating Google Pay, PhonePe, and Amazon Pay mock flows, cinema seat contention, and flash sales.</li>
+            </ul>
+
+            <div class="project-card__tags">
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Microservices</span>
+              <span class="tag">Failure Prediction</span>
+              <span class="tag">Sandbox Studio</span>
+            </div>
+          </article>
+
+          <!-- Project 02: Digi Bus -->
+          <article class="project-card" data-categories="fullstack">
+            <div class="project-card__top">
+              <div class="project-card__meta">
+                <span class="project-card__index tabular">02</span>
+                <span>·</span>
+                <span>Real-Time Full-Stack</span>
+              </div>
+              <div class="project-card__links">
+                <a
+                  href="https://github.com/ihariprasanth/digi-bus"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-icon-link"
+                  aria-label="Digi Bus on GitHub"
+                  title="GitHub Repository"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-card__title">
+              Digi Bus
+              <span class="project-card__subtitle">Real-Time Public Transit Platform</span>
+            </h3>
+
+            <p class="project-card__desc">
+              End-to-end transit platform linking a Kotlin Android conductor app to a passenger web portal over a unified Supabase Realtime architecture.
+            </p>
+
+            <ul class="project-card__points">
+              <li>Zero-polling live GPS bus tracking on interactive Leaflet maps with phone OTP login and wallet ticketing.</li>
+              <li>Strict Row Level Security (RLS) policies enforced across 10+ normalized PostgreSQL tables.</li>
+            </ul>
+
+            <div class="project-card__tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Supabase Realtime</span>
+              <span class="tag">Kotlin</span>
+              <span class="tag">Leaflet</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+          </article>
+
+          <!-- Project 03: RemindGo -->
+          <article class="project-card" data-categories="systems fullstack">
+            <div class="project-card__top">
+              <div class="project-card__meta">
+                <span class="project-card__index tabular">03</span>
+                <span>·</span>
+                <span>Offline Desktop App</span>
+              </div>
+              <div class="project-card__links">
+                <a
+                  href="https://github.com/ihariprasanth/remindgo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-icon-link"
+                  aria-label="RemindGo on GitHub"
+                  title="GitHub Repository"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://ihariprasanth.github.io/remindgo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-icon-link"
+                  aria-label="RemindGo Live Website"
+                  title="Live Preview"
+                >
+                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H6M12 4v6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-card__title">
+              RemindGo
+              <span class="project-card__subtitle">Privacy-First Windows Task &amp; Reminder Manager</span>
+            </h3>
+
+            <p class="project-card__desc">
+              100% offline Windows desktop productivity app with zero accounts, servers, or telemetry — engineered for reliable daily scheduling.
+            </p>
+
+            <ul class="project-card__points">
+              <li>Always-on-top alarm popups, native Windows notifications, and snooze / missed-alarm recovery after sleep or lock.</li>
+              <li>GitHub-style 52-week productivity heatmap, streak tracking, recurring tasks, and local SQLite storage with JSON backup &amp; restore.</li>
+            </ul>
+
+            <div class="project-card__tags">
+              <span class="tag">Electron</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+          </article>
+
+          <!-- Project 04: SysScan -->
+          <article class="project-card" data-categories="systems">
+            <div class="project-card__top">
+              <div class="project-card__meta">
+                <span class="project-card__index tabular">04</span>
+                <span>·</span>
+                <span>Systems &amp; Telemetry</span>
+              </div>
+              <div class="project-card__links">
+                <a
+                  href="https://github.com/ihariprasanth/sysscan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-icon-link"
+                  aria-label="SysScan on GitHub"
+                  title="GitHub Repository"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="project-card__title">
+              SysScan
+              <span class="project-card__subtitle">Windows Hardware Telemetry &amp; Health Diagnostics Engine</span>
+            </h3>
+
+            <p class="project-card__desc">
+              Scheduled four-tier hardware diagnostics scanner (Levels 0/2/3/4) built in Python with lightweight background daemon execution.
+            </p>
+
+            <ul class="project-card__points">
+              <li>Captures rolling timeseries hardware telemetry in structured JSONL logs for longitudinal analysis.</li>
+              <li>Automated health-summary engine flagging CRITICAL and WARNING states for overheating, disk wear, SMART errors, and battery decay.</li>
+            </ul>
+
+            <div class="project-card__tags">
+              <span class="tag">Python</span>
+              <span class="tag">System Diagnostics</span>
+              <span class="tag">JSONL</span>
+              <span class="tag">Background Daemon</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. EXPERIENCE -->
+    <section id="experience" class="section" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="section__kicker">02 / Experience</span>
+            <h2 id="experience-heading" class="section__title">Internships</h2>
+          </div>
+        </div>
+
+        <div class="editorial-list">
+          <article class="editorial-row">
+            <div class="editorial-row__side">
+              <span class="editorial-row__date tabular">Sep 2026 — Present</span>
+              <span class="editorial-row__meta">Online · Active</span>
+            </div>
+            <div>
+              <h3 class="editorial-row__role">Cloud Computing Intern (AWS)</h3>
+              <p class="editorial-row__org">Skill Nexis</p>
+              <p class="editorial-row__body">
+                Hands-on cloud infrastructure internship working with Amazon Web Services (AWS) — provisioning compute instances, managing object &amp; block storage, configuring IAM security policies, and designing resilient, scalable cloud deployments.
+              </p>
+            </div>
+          </article>
+
+          <article class="editorial-row">
+            <div class="editorial-row__side">
+              <span class="editorial-row__date tabular">Aug 2026 — Sep 2026</span>
+              <span class="editorial-row__meta">Bangalore (Online) · Cohort WMSI26_008</span>
+            </div>
+            <div>
+              <h3 class="editorial-row__role">MERN Stack Development Intern</h3>
+              <p class="editorial-row__org">Emertxe Information Technologies</p>
+              <p class="editorial-row__body">
+                Built <strong>HomelyHub — Property Booking Platform</strong> end-to-end using MongoDB, Express.js, React.js, and Node.js. Implemented responsive property browsing, user authentication, booking &amp; reservation flows, and RESTful backend APIs.
+              </p>
+              <div class="doc-actions">
+                <a
+                  href="assets/docs/Emertxe-MERN-Internship-Certificate.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="doc-chip"
+                >
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9.5 2H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V5.5L9.5 2z" />
+                    <path d="M9.5 2v3.5H13" />
+                  </svg>
+                  <span>Internship Certificate ↗</span>
+                </a>
+
+                <a
+                  href="assets/docs/Emertxe-MERN-Internship-Offer-Letter.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="doc-chip"
+                >
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9.5 2H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V5.5L9.5 2z" />
+                    <path d="M9.5 2v3.5H13" />
+                  </svg>
+                  <span>Offer Letter ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. TECHNICAL SKILLS -->
+    <section id="skills" class="section" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="section__kicker">03 / Capabilities</span>
+            <h2 id="skills-heading" class="section__title">Technical Skills</h2>
+          </div>
+        </div>
+
+        <div class="skills-matrix">
+          <div class="skill-row">
+            <h3 class="skill-row__label">Languages</h3>
+            <div class="skill-row__items">
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">TypeScript</span>
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <h3 class="skill-row__label">Frontend</h3>
+            <div class="skill-row__items">
+              <span class="skill-pill">React.js</span>
+              <span class="skill-pill">Tailwind CSS</span>
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3</span>
+              <span class="skill-pill">Vite</span>
+              <span class="skill-pill">Responsive UI/UX</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <h3 class="skill-row__label">Backend &amp; Cloud</h3>
+            <div class="skill-row__items">
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">Express.js</span>
+              <span class="skill-pill">Supabase Realtime</span>
+              <span class="skill-pill">AWS Cloud</span>
+              <span class="skill-pill">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <h3 class="skill-row__label">Databases</h3>
+            <div class="skill-row__items">
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">MySQL</span>
+              <span class="skill-pill">SQLite</span>
+              <span class="skill-pill">MongoDB</span>
+              <span class="skill-pill">Row Level Security (RLS)</span>
+            </div>
+          </div>
+
+          <div class="skill-row">
+            <h3 class="skill-row__label">Tools &amp; Core</h3>
+            <div class="skill-row__items">
+              <span class="skill-pill">Git &amp; GitHub</span>
+              <span class="skill-pill">Vercel</span>
+              <span class="skill-pill">Hostinger</span>
+              <span class="skill-pill">Electron</span>
+              <span class="skill-pill">Data Structures &amp; Algorithms</span>
+              <span class="skill-pill">System Diagnostics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. EDUCATION & CERTIFICATIONS -->
+    <section id="credentials" class="section" aria-labelledby="credentials-heading">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="section__kicker">04 / Credentials</span>
+            <h2 id="credentials-heading" class="section__title">Education &amp; Certifications</h2>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="subblock">
+          <h3 class="subblock__label">Education</h3>
+          <div class="editorial-list">
+            <article class="editorial-row">
+              <div class="editorial-row__side">
+                <span class="editorial-row__date tabular">2024 — 2028</span>
+                <span class="editorial-row__meta tabular">CGPA: 8.52 / 10</span>
+              </div>
+              <div>
+                <h4 class="editorial-row__role">B.E. Computer Science and Engineering</h4>
+                <p class="editorial-row__org">VSB College of Engineering and Technical Campus, Coimbatore</p>
+                <p class="editorial-row__body">
+                  Third-year undergraduate focusing on Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems, Full-Stack Web Engineering, and Cloud Computing.
+                </p>
+              </div>
+            </article>
+
+            <article class="editorial-row">
+              <div class="editorial-row__side">
+                <span class="editorial-row__date tabular">2023 — 2024</span>
+                <span class="editorial-row__meta tabular">Score: 87.16%</span>
+              </div>
+              <div>
+                <h4 class="editorial-row__role">Higher Secondary Certificate (HSC — 12th)</h4>
+                <p class="editorial-row__org">Kathiravan Matriculation Higher Secondary School, Tamil Nadu</p>
+                <p class="editorial-row__body">
+                  Completed higher secondary specialization in Mathematics, Physics, Chemistry, and Computer Science.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="subblock" id="certifications">
+          <h3 class="subblock__label">Certifications</h3>
+          <div class="cert-list">
+            <article class="cert-row">
+              <span class="cert-row__date tabular">NPTEL</span>
+              <div>
+                <h4 class="cert-row__title">Programming in Java — Elite (83%)</h4>
+                <p class="cert-row__issuer">NPTEL · Ministry of Education, Govt. of India — Core &amp; advanced Java, OOP, Collections, multithreading</p>
+              </div>
+              <div class="cert-row__actions">
+                <span class="badge-subtle tabular">Score 83%</span>
+              </div>
+            </article>
+
+            <article class="cert-row">
+              <span class="cert-row__date tabular">Jan 2026</span>
+              <div>
+                <h4 class="cert-row__title">AWS — Solutions Architecture Job Simulation</h4>
+                <p class="cert-row__issuer">Amazon Web Services via Forage — Scalable cloud architecture, VPC design, and IAM permissions</p>
+              </div>
+              <div class="cert-row__actions">
+                <span class="tag">Forage</span>
+              </div>
+            </article>
+
+            <article class="cert-row">
+              <span class="cert-row__date tabular">Nov 2025</span>
+              <div>
+                <h4 class="cert-row__title">Java Programming for Beginners</h4>
+                <p class="cert-row__issuer">IBM via Coursera · Credential ID: <span class="tabular">H7UFBNEMNQG3</span></p>
+              </div>
+              <div class="cert-row__actions">
+                <a
+                  href="assets/docs/Coursera-Java-Programming-for-Beginners.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="doc-chip"
+                >
+                  <span>View PDF ↗</span>
+                </a>
+                <a
+                  href="https://coursera.org/verify/H7UFBNEMNQG3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="doc-chip"
+                >
+                  <span>Verify ↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="cert-row">
+              <span class="cert-row__date tabular">Jul 2025</span>
+              <div>
+                <h4 class="cert-row__title">Data Analytics Job Simulation</h4>
+                <p class="cert-row__issuer">Deloitte Australia via Forage · Data analysis &amp; forensic technology · Code: <span class="tabular">YAFtQ3R3SSGKDiFws</span></p>
+              </div>
+              <div class="cert-row__actions">
+                <a
+                  href="assets/docs/Deloitte-Job-Simulation.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="doc-chip"
+                >
+                  <span>View PDF ↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="cert-row">
+              <span class="cert-row__date tabular">2024</span>
+              <div>
+                <h4 class="cert-row__title">100 Days of Code: Complete Python Pro Bootcamp</h4>
+                <p class="cert-row__issuer">Udemy · Automation scripts, data workflows, web tooling, and algorithmic problem solving</p>
+              </div>
+              <div class="cert-row__actions">
+                <a
+                  href="https://www.udemy.com/certificate/UC-53a7649a-2c4f-40b5-95f0-a1b84026968b/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="doc-chip"
+                >
+                  <span>Verify ↗</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="section__kicker">05 / Contact</span>
+            <h2 id="contact-heading" class="section__title">Get in Touch</h2>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <div>
+            <h3 class="contact-box__heading">Let’s build something reliable together.</h3>
+            <p class="contact-box__text">
+              Currently seeking software engineering, full-stack, and cloud internships. Reach out directly by email or connect on any platform.
+            </p>
+            <div class="email-row">
+              <a href="mailto:hariprasanth.user@gmail.com" class="email-link">
+                hariprasanth.user@gmail.com
+              </a>
+              <a href="mailto:hariprasanth.user@gmail.com" class="doc-chip">
+                <span>Send Email ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-channels" aria-label="Direct contact channels">
+            <a href="https://github.com/ihariprasanth" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <span class="channel-card__left">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                <span>GitHub</span>
+              </span>
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="https://linkedin.com/in/ihariprasanth" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <span class="channel-card__left">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 110-4.125 2.062 2.062 0 010 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+                <span>LinkedIn</span>
+              </span>
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="https://leetcode.com/ihariprasanth" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <span class="channel-card__left">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
+                </svg>
+                <span>LeetCode</span>
+              </span>
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="tel:+919962322926" class="channel-card">
+              <span class="channel-card__left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg>
+                <span class="tabular">+91 99623 22926</span>
+              </span>
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="https://wa.me/919962322926" target="_blank" rel="noopener noreferrer" class="channel-card">
+              <span class="channel-card__left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+                </svg>
+                <span>WhatsApp</span>
+              </span>
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a
+              href="assets/docs/HARIPRASANTH_RESUME.pdf"
+              download="Hariprasanth_T_Resume.pdf"
+              class="channel-card"
+            >
+              <span class="channel-card__left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                  <path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3" />
+                </svg>
+                <span>Resume PDF</span>
+              </span>
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span>© <span class="tabular">2026</span> Hariprasanth T · Tiruppur, Tamil Nadu</span>
+        <a href="#home" class="footer__top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
