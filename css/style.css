@@ -1,7 +1,7 @@
 /* ==========================================================================
    Hariprasanth T — Minimalist Developer Portfolio (100% Pure HTML & CSS)
-   Aesthetic: Swiss Editorial Minimalism · Pure Sans-Serif (SF Pro)
-   Zero JavaScript · Native CSS Theme Toggle & Project Filter via :has()
+   Aesthetic: Executive Dark Minimalism · Pure Sans-Serif (SF Pro)
+   Zero JavaScript · Floating Bottom Icon Navbar on Mobile
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -40,52 +40,54 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. Design Tokens — Permanent Matte Dark Theme
+   2. Design Tokens — Permanent Executive Matte Dark Theme
    -------------------------------------------------------------------------- */
 :root {
-  --bg: #0a0a0b;
-  --bg-header: rgba(10, 10, 11, 0.84);
-  --surface: #111113;
-  --surface-subtle: #18181b;
-  --surface-hover: #1b1b1f;
+  --bg: #09090b;
+  --bg-header: rgba(9, 9, 11, 0.82);
+  --surface: #111114;
+  --surface-grad: linear-gradient(180deg, rgba(24, 24, 29, 0.92) 0%, rgba(16, 16, 20, 0.96) 100%);
+  --surface-subtle: #17171c;
+  --surface-hover: #1d1d24;
 
   --text-primary: #f5f5f7;
   --text-secondary: #a1a1aa;
   --text-muted: #71717a;
 
-  --border: #232327;
-  --border-strong: #34343c;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --specular: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 
   --accent: #60a5fa;
   --accent-soft: rgba(96, 165, 250, 0.12);
   --btn-primary-bg: #f5f5f7;
-  --btn-primary-text: #0a0a0b;
+  --btn-primary-text: #09090b;
   --btn-primary-hover: #e4e4e7;
 
   --status: #22c55e;
-  --status-ring: rgba(34, 197, 94, 0.24);
+  --status-ring: rgba(34, 197, 94, 0.22);
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 14px 36px -14px rgba(0, 0, 0, 0.55);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 16px 38px -12px rgba(0, 0, 0, 0.65);
 
   --font-display: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-sans: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --container: 980px;
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
+  --radius-sm: 9px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
   --radius-pill: 999px;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --t-fast: 150ms var(--ease);
+  --t-fast: 160ms var(--ease);
   --t-base: 260ms var(--ease);
 
   color-scheme: dark;
 }
 
 /* --------------------------------------------------------------------------
-   3. Base Reset & Accessibility
+   3. Base Reset, Ambient Spotlight & Accessibility
    -------------------------------------------------------------------------- */
 *,
 *::before,
@@ -100,6 +102,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   font-family: var(--font-sans);
   font-size: 16px;
@@ -109,7 +112,25 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  transition: background-color var(--t-base), color var(--t-base);
+}
+
+/* Subtle executive top ambient glow */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 520px;
+  background: radial-gradient(ellipse 75% 360px at 50% -40px, rgba(96, 165, 250, 0.085), transparent 72%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+main,
+.footer {
+  position: relative;
+  z-index: 1;
 }
 
 img {
@@ -169,17 +190,24 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   4. Sticky Minimal Header (Pure HTML/CSS Responsive Nav)
+   4. Sticky Minimal Header (Desktop Top Bar + Mobile Floating Bottom Dock)
    -------------------------------------------------------------------------- */
 .header {
   position: sticky;
   top: 0;
   z-index: 60;
-  background: var(--bg-header);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
-  transition: background-color var(--t-base), border-color var(--t-base);
+}
+
+/* Backdrop blur placed on ::before so position:fixed mobile dock isn't trapped */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-header);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: -1;
 }
 
 .nav {
@@ -193,94 +221,55 @@ a {
 .nav__brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.975rem;
+  font-size: 1rem;
   letter-spacing: -0.02em;
   color: var(--text-primary);
   white-space: nowrap;
-}
-
-.nav__mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 7px;
-  background: var(--btn-primary-bg);
-  color: var(--btn-primary-text);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
 }
 
 .nav__list {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 6px;
   list-style: none;
   margin: 0 0 0 auto;
-  padding: 0;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border);
+  box-shadow: var(--specular);
 }
 
 .nav__link {
   position: relative;
-  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.845rem;
+  font-weight: 500;
   color: var(--text-secondary);
-  transition: color var(--t-fast);
-  padding: 4px 0;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
   white-space: nowrap;
+  transition: color var(--t-fast), background-color var(--t-fast);
 }
 
 .nav__link:hover {
   color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Icons hidden on desktop top bar, shown as FAB badges on mobile bottom bar */
+.nav__icon {
+  display: none;
 }
 
 .nav__controls {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.icon-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text-secondary);
-  cursor: pointer;
-  user-select: none;
-  transition: color var(--t-fast), border-color var(--t-fast), background-color var(--t-fast);
-}
-
-.icon-btn:hover {
-  color: var(--text-primary);
-  border-color: var(--border-strong);
-  background: var(--surface-hover);
-}
-
-/* Keyboard focus ring for pure-CSS theme toggle */
-#theme-toggle:focus-visible ~ .header .theme-label {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.theme-toggle__sun {
-  display: none;
-}
-
-:root:has(#theme-toggle:checked) .theme-toggle__sun {
-  display: block;
-}
-
-:root:has(#theme-toggle:checked) .theme-toggle__moon {
-  display: none;
 }
 
 .nav__resume {
@@ -291,21 +280,22 @@ a {
   padding: 0 14px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  background: var(--surface);
+  background: var(--surface-grad);
+  box-shadow: var(--specular), var(--shadow-sm);
   font-size: 0.84rem;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
-  transition: border-color var(--t-fast), background-color var(--t-fast);
+  transition: border-color var(--t-fast), transform var(--t-fast);
 }
 
 .nav__resume:hover {
   border-color: var(--border-strong);
-  background: var(--surface-hover);
+  transform: translateY(-1px);
 }
 
 /* --------------------------------------------------------------------------
-   5. Hero Section — Split Editorial Layout + Framed Studio Portrait
+   5. Hero Section — Single-Column Editorial Focus + Looping Pill Marquee
    -------------------------------------------------------------------------- */
 @keyframes fadeUp {
   from {
@@ -324,21 +314,21 @@ a {
 }
 
 .hero__content {
-  max-width: 720px;
+  max-width: 730px;
 }
 
 .status-pill {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  padding: 6px 13px;
+  padding: 6px 14px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border);
-  background: var(--surface);
+  background: var(--surface-grad);
+  box-shadow: var(--specular), var(--shadow-sm);
   font-size: 0.8125rem;
   color: var(--text-secondary);
-  margin-bottom: 22px;
-  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
 }
 
 .status-pill__dot {
@@ -352,28 +342,32 @@ a {
 
 .hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.65rem, 5.5vw, 4.1rem);
+  font-size: clamp(2.75rem, 5.6vw, 4.25rem);
   font-weight: 700;
-  line-height: 1.06;
+  line-height: 1.05;
   letter-spacing: -0.035em;
   margin: 0 0 18px;
-  color: var(--text-primary);
+  background: linear-gradient(180deg, #ffffff 15%, #c7c9d1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #ffffff;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero__lead {
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 2.1vw, 1.425rem);
   font-weight: 400;
-  line-height: 1.42;
+  line-height: 1.44;
   letter-spacing: -0.015em;
   color: var(--text-primary);
   margin: 0 0 16px;
-  max-width: 42ch;
+  max-width: 44ch;
 }
 
 .hero__bio {
   font-size: 0.9625rem;
-  line-height: 1.68;
+  line-height: 1.7;
   color: var(--text-secondary);
   margin: 0 0 28px;
   max-width: 60ch;
@@ -384,7 +378,7 @@ a {
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .btn {
@@ -405,7 +399,7 @@ a {
 .btn--primary {
   background: var(--btn-primary-bg);
   color: var(--btn-primary-text);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.12);
 }
 
 .btn--primary:hover {
@@ -414,9 +408,10 @@ a {
 }
 
 .btn--secondary {
-  background: var(--surface);
+  background: var(--surface-grad);
   color: var(--text-primary);
   border: 1px solid var(--border);
+  box-shadow: var(--specular), var(--shadow-sm);
 }
 
 .btn--secondary:hover {
@@ -438,9 +433,9 @@ a {
 .hero__marquee {
   position: relative;
   width: 100%;
-  max-width: 520px;
+  max-width: 560px;
   overflow: hidden;
-  padding: 6px 0;
+  padding: 4px 0;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
 }
@@ -449,7 +444,7 @@ a {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: marqueeLoop 15s linear infinite;
+  animation: marqueeLoop 16s linear infinite;
   will-change: transform;
 }
 
@@ -461,46 +456,56 @@ a {
 .hero__marquee-group {
   display: flex;
   align-items: center;
-  gap: 32px;
-  padding-right: 32px;
+  gap: 14px;
+  padding-right: 14px;
   flex-shrink: 0;
 }
 
 .text-link {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 0.9rem;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  box-shadow: var(--specular);
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-secondary);
   white-space: nowrap;
-  transition: color var(--t-fast);
+  transition: color var(--t-fast), border-color var(--t-fast), background-color var(--t-fast);
 }
 
 .text-link:hover {
   color: var(--text-primary);
+  border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .text-link svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
 }
 
-/* Quick Highlights Strip */
+/* Quick Highlights Strip — Elevated Glass Container */
 .metrics {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  margin-top: clamp(2.5rem, 5vw, 3.75rem);
+  background: var(--surface-grad);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--specular), var(--shadow-sm);
+  padding: 4px 24px;
 }
 
 .metric {
-  padding: 20px 18px 20px 0;
+  padding: 18px 18px 18px 0;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
 .metric + .metric {
@@ -510,7 +515,7 @@ a {
 
 .metric__value {
   font-family: var(--font-display);
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text-primary);
@@ -538,7 +543,7 @@ a {
 
 .section--first {
   border-top: none;
-  padding-top: clamp(2.5rem, 4.5vw, 3.75rem);
+  padding-top: clamp(2rem, 4vw, 3.25rem);
 }
 
 .section__head {
@@ -551,18 +556,20 @@ a {
 }
 
 .section__kicker {
-  display: block;
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--accent);
   margin-bottom: 8px;
 }
 
 .section__title {
   font-family: var(--font-display);
-  font-size: clamp(1.55rem, 3vw, 2.05rem);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.15;
@@ -577,6 +584,10 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
 }
 
 .filter-btn {
@@ -584,7 +595,7 @@ a {
   align-items: center;
   padding: 6px 13px;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
   background: transparent;
   font-size: 0.8125rem;
   color: var(--text-secondary);
@@ -595,7 +606,6 @@ a {
 
 .filter-btn:hover {
   color: var(--text-primary);
-  border-color: var(--border-strong);
 }
 
 /* Active filter pill states (Pure CSS) */
@@ -605,8 +615,8 @@ a {
 #work:has(#filter-systems:checked) label[for="filter-systems"] {
   background: var(--btn-primary-bg);
   color: var(--btn-primary-text);
-  border-color: var(--btn-primary-bg);
   font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 #work:has(#filter-all:focus-visible) label[for="filter-all"],
@@ -631,21 +641,21 @@ a {
 }
 
 .project-card {
-  background: var(--surface);
+  background: var(--surface-grad);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 26px;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--specular), var(--shadow-sm);
   transition: border-color var(--t-base), transform var(--t-base), box-shadow var(--t-base);
 }
 
 .project-card:hover {
   border-color: var(--border-strong);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  box-shadow: var(--specular), var(--shadow-md);
 }
 
 .project-card__top {
@@ -665,7 +675,7 @@ a {
 
 .project-card__index {
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--accent);
 }
 
 .project-card__links {
@@ -682,6 +692,7 @@ a {
   height: 32px;
   border-radius: 8px;
   border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text-secondary);
   transition: color var(--t-fast), border-color var(--t-fast), background-color var(--t-fast);
 }
@@ -689,15 +700,16 @@ a {
 .card-icon-link:hover {
   color: var(--text-primary);
   border-color: var(--border-strong);
-  background: var(--surface-subtle);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .badge-subtle {
   display: inline-flex;
   align-items: center;
-  padding: 3px 9px;
+  padding: 3px 10px;
   border-radius: var(--radius-pill);
   background: var(--accent-soft);
+  border: 1px solid rgba(96, 165, 250, 0.22);
   color: var(--accent);
   font-size: 0.73rem;
   font-weight: 600;
@@ -706,7 +718,7 @@ a {
 
 .project-card__title {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.22rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.28;
@@ -742,7 +754,7 @@ a {
 }
 
 .project-card__points li::marker {
-  color: var(--text-muted);
+  color: var(--accent);
 }
 
 .project-card__tags {
@@ -756,11 +768,11 @@ a {
 
 .tag {
   font-size: 0.76rem;
-  padding: 3px 9px;
-  border-radius: 6px;
-  background: var(--surface-subtle);
+  padding: 4px 10px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.035);
   color: var(--text-secondary);
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* --------------------------------------------------------------------------
@@ -798,7 +810,7 @@ a {
 .editorial-row__date {
   font-size: 0.84rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .editorial-row__meta {
@@ -808,7 +820,7 @@ a {
 
 .editorial-row__role {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.16rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.3;
@@ -818,7 +830,7 @@ a {
 
 .editorial-row__org {
   font-size: 0.92rem;
-  color: var(--text-secondary);
+  color: var(--accent);
   font-weight: 500;
   margin: 0 0 12px;
 }
@@ -847,25 +859,27 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
+  padding: 6px 13px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  background: var(--surface);
+  background: var(--surface-grad);
+  box-shadow: var(--specular), var(--shadow-sm);
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--text-primary);
-  transition: border-color var(--t-fast), background-color var(--t-fast), color var(--t-fast);
+  transition: border-color var(--t-fast), background-color var(--t-fast), transform var(--t-fast);
 }
 
 .doc-chip:hover {
   border-color: var(--border-strong);
-  background: var(--surface-subtle);
+  background: var(--surface-hover);
+  transform: translateY(-1px);
 }
 
 .doc-chip svg {
   width: 13px;
   height: 13px;
-  color: var(--text-muted);
+  color: var(--accent);
 }
 
 /* --------------------------------------------------------------------------
@@ -902,18 +916,20 @@ a {
 }
 
 .skill-pill {
-  padding: 5px 12px;
-  border-radius: 7px;
+  padding: 6px 13px;
+  border-radius: 8px;
   border: 1px solid var(--border);
-  background: var(--surface);
+  background: var(--surface-grad);
+  box-shadow: var(--specular);
   font-size: 0.84rem;
   color: var(--text-secondary);
-  transition: border-color var(--t-fast), color var(--t-fast);
+  transition: border-color var(--t-fast), color var(--t-fast), transform var(--t-fast);
 }
 
 .skill-pill:hover {
   border-color: var(--border-strong);
   color: var(--text-primary);
+  transform: translateY(-1px);
 }
 
 /* --------------------------------------------------------------------------
@@ -928,7 +944,7 @@ a {
 .subblock__label {
   font-size: 0.8125rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-muted);
   margin: 0 0 18px;
@@ -981,7 +997,7 @@ a {
    11. Contact & Minimal Footer
    -------------------------------------------------------------------------- */
 .contact-box {
-  background: var(--surface);
+  background: var(--surface-grad);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: clamp(1.75rem, 4vw, 2.75rem);
@@ -989,7 +1005,7 @@ a {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
   gap: 28px;
   align-items: center;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--specular), var(--shadow-md);
 }
 
 .contact-box__heading {
@@ -1045,16 +1061,18 @@ a {
   padding: 12px 13px;
   border-radius: 10px;
   border: 1px solid var(--border);
-  background: var(--bg);
+  background: rgba(9, 9, 11, 0.55);
+  box-shadow: var(--specular);
   font-size: 0.84rem;
   color: var(--text-secondary);
-  transition: border-color var(--t-fast), color var(--t-fast), background-color var(--t-fast);
+  transition: border-color var(--t-fast), color var(--t-fast), background-color var(--t-fast), transform var(--t-fast);
 }
 
 .channel-card:hover {
   border-color: var(--border-strong);
   color: var(--text-primary);
   background: var(--surface-subtle);
+  transform: translateY(-1px);
 }
 
 .channel-card__left {
@@ -1102,91 +1120,114 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   12. Reduced Motion Support
-   -------------------------------------------------------------------------- */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .hero {
-    animation: none;
-  }
-  * {
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   13. Responsive Layout (Pure CSS — Clean 2-Row Mobile Sticky Nav)
+   12. Responsive Layout — Floating Bottom FAB-Icon Dock on Mobile
    -------------------------------------------------------------------------- */
 @media (max-width: 860px) {
   html {
-    scroll-padding-top: 118px;
+    scroll-padding-top: 74px;
   }
 
   .nav {
-    flex-wrap: wrap;
-    row-gap: 0;
-    min-height: auto;
-    padding: 12px 0 0;
+    min-height: 60px;
   }
 
-  .nav__brand {
-    order: 1;
-  }
-
-  .nav__controls {
-    order: 2;
-  }
-
+  /* Move navbar list to a floating bottom dock on mobile */
   .nav__list {
-    order: 3;
-    flex-basis: 100%;
-    margin: 12px 0 0;
-    padding: 10px 0 11px;
-    border-top: 1px solid var(--border);
-    justify-content: space-between;
-    gap: 12px;
-    overflow-x: auto;
-    scrollbar-width: none;
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    z-index: 120;
+    margin: 0 auto;
+    max-width: 460px;
+    padding: 7px 6px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2px;
+    border-radius: 20px;
+    background: rgba(17, 17, 21, 0.88);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  .nav__list::-webkit-scrollbar {
-    display: none;
+  .nav__list li {
+    display: flex;
+    justify-content: center;
+    min-width: 0;
   }
 
   .nav__link {
-    font-size: 0.83rem;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 2px;
+    border-radius: 14px;
+    background: transparent !important;
   }
 
-  .hero__grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
+  /* FAB-style rounded icon badge on top */
+  .nav__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 29px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    color: var(--text-secondary);
+    transition: transform var(--t-fast), background-color var(--t-fast), border-color var(--t-fast), color var(--t-fast);
   }
 
-  .hero__visual {
-    order: -1;
+  .nav__icon svg {
+    width: 15px;
+    height: 15px;
   }
 
-  .portrait__frame {
-    margin-left: 0;
-    max-width: 210px;
-  }
-
-  .portrait__caption {
-    margin-left: 0;
+  /* Title below each icon */
+  .nav__label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    color: var(--text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
     max-width: 100%;
-    justify-content: flex-start;
-    gap: 12px;
-    flex-wrap: nowrap;
   }
 
-  .portrait__caption span {
-    white-space: nowrap;
+  .nav__link:hover .nav__icon,
+  .nav__link:active .nav__icon,
+  .nav__link:focus-visible .nav__icon {
+    background: rgba(96, 165, 250, 0.16);
+    border-color: rgba(96, 165, 250, 0.38);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  .nav__link:hover .nav__label,
+  .nav__link:active .nav__label,
+  .nav__link:focus-visible .nav__label {
+    color: #ffffff;
+  }
+
+  /* Extra bottom padding so floating dock never overlaps footer */
+  .footer {
+    padding-bottom: 108px;
   }
 
   .metrics {
     grid-template-columns: repeat(2, 1fr);
+    padding: 4px 18px;
+  }
+
+  .metric:nth-child(2) {
+    padding-right: 0;
   }
 
   .metric:nth-child(3) {
@@ -1227,7 +1268,7 @@ a {
   }
 
   .hero {
-    padding-top: 2rem;
+    padding-top: 2.25rem;
   }
 
   .hero__actions {
@@ -1245,10 +1286,6 @@ a {
 
   .contact-channels {
     grid-template-columns: 1fr;
-  }
-
-  .portrait__frame {
-    max-width: 184px;
   }
 
   .status-pill {
